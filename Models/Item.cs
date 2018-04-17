@@ -1,8 +1,9 @@
-using System.Collections.Generic; // Needed for generating Lists
+using System.Collections.Generic;
+using System;
 
 namespace ToDoList.Models
 {
-  public class IHostingEnvironment
+  public class Item
   {
     private string _description;
     private static List<Item> _instances = new List<Item> {};
@@ -27,5 +28,10 @@ namespace ToDoList.Models
     {
       _instances.Add(this);
     }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
   }
 }
