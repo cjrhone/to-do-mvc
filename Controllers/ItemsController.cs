@@ -35,5 +35,11 @@ namespace ToDoList.Controllers
             return View();
         }
 
+        [HttpGet("/items/{id}")] //Route to be called when someone clicks a particular Item (1,2,3,etc)
+        public ActionResult Details(int id)
+        {
+          Item item = Item.Find(id);
+          return View(item);
+        }
     }
 }
