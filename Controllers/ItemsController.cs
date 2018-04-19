@@ -23,7 +23,7 @@ namespace ToDoList.Controllers
         public ActionResult Create()
         {
           Item newItem = new Item (Request.Form["new-item"]);
-          newItem.Save();
+          // newItem.Save(); //no longer needed because each item contains ID
           List<Item> allItems = Item.GetAll();
           return View("Index", allItems);
         }
